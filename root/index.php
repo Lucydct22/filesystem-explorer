@@ -16,37 +16,37 @@
 <body>
 
     <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">    
-        <img src="assets/logo.png" alt="Logo" width="50" height="50"class="d-inline-block align-text-top"/></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor03">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <div class="options">
@@ -54,27 +54,21 @@
         <a href="">Upload</a>
         <a href="">Create</a>
         <a href="">Delete</a>
+        <label>upload</label>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="send data">
+        </form>
+
+        <input type="file" id="file" style="display:none;" />
+        <button id="button" name="button" value="Upload" onclick="thisFileUpload();">Upload</button>
+
 
     </div>
     <div class="main-container">
         <div class="files-container">
             <p>Root</p>
-            <ul>
-                <li>doc</li>
-                <li>csv</li>
-                <li>jpg</li>
-                <li>png</li>
-                <li>txt</li>
-                <li>ppt</li>
-                <li>odt</li>
-                <li>pdf</li>
-                <li>zip</li>
-                <li>rar</li>
-                <li>exe</li>
-                <li>svg</li>
-                <li>mp3</li>
-                <li>mp4</li>
-            </ul>
+
         </div>
 
         <div class="content-container">
@@ -98,3 +92,14 @@
 </body>
 
 </html>
+
+<?php
+
+$document = "assets/texto.doc";
+
+if (file_exists($document)) {
+    $content = file_get_contents($document);
+    echo $content;
+}
+
+?>
