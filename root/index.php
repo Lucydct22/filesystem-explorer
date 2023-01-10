@@ -49,20 +49,20 @@
         </nav>
     </header>
 
+    <form method="POST" action="upload.php" enctype="multipart/form-data">
+    <div>
+      <span>Upload a File:</span>
+      <input type="file" name="uploadedFile" />
+    </div>
+    <input type="submit" name="uploadBtn" value="Upload" />
+  </form>
+
     <div class="options">
         <a href="">Edit</a>
         <a href="">Upload</a>
         <a href="">Create</a>
         <a href="">Delete</a>
-        <label>upload</label>
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <input type="submit" value="send data">
-        </form>
-
-        <input type="file" id="file" style="display:none;" />
-        <button id="button" name="button" value="Upload" onclick="thisFileUpload();">Upload</button>
-
+     
 
     </div>
     <div class="main-container">
@@ -93,13 +93,3 @@
 
 </html>
 
-<?php
-
-$document = "assets/texto.doc";
-
-if (file_exists($document)) {
-    $content = file_get_contents($document);
-    echo $content;
-}
-
-?>
