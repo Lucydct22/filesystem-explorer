@@ -49,20 +49,20 @@
         </nav>
     </header>
 
-    <form method="POST" action="upload.php" enctype="multipart/form-data">
-    <div>
-      <span>Upload a File:</span>
-      <input type="file" name="uploadedFile" />
-    </div>
-    <input type="submit" name="uploadBtn" value="Upload" />
-  </form>
+    <form method="POST" action="fileinfo.php" enctype="multipart/form-data">
+        <div>
+            <span>Upload a File:</span>
+            <input type="file" name="uploadedFile" />
+        </div>
+        <input type="submit" name="uploadBtn" value="Upload" />
+    </form>
 
     <div class="options">
         <a href="">Edit</a>
         <a href="">Upload</a>
         <a href="">Create</a>
         <a href="">Delete</a>
-     
+
 
     </div>
     <div class="main-container">
@@ -92,4 +92,3 @@
 </body>
 
 </html>
-
