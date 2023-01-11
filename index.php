@@ -11,8 +11,11 @@ if (isset($_POST['boton'])) {
         } else {
             echo ' sorry, an error occurred';
         }
+        
     }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
