@@ -38,12 +38,17 @@ if (isset($_POST['boton'])) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
+                                echo $_FILES['archivo']['size'] / 1000000;
 
                                 echo '</div>';
                             }
                         }
                     }
-                    echo $_FILES['archivo']['size'] / 1000000;
+                    $name = 'aarchive';
+                    if (file_exists($archive)) {
+                        echo "$name was last modified: " . date("F d Y H:i:s.", filemtime($name));
+                    }
+
                     ?>
                 </div>
             </div>
