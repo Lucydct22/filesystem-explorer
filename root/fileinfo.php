@@ -3,6 +3,8 @@
 $archive = $_FILES["uploadedFile"]['name'];
 $saved = $_FILES["uploadedFile"]['tmp_name'];
 $btn = $_POST["uploadBtn"];
+$handle = fopen("data.txt", "r+");
+$file = "data.txt";
 
 
 if (!file_exists("uploadBtn")) {
@@ -39,16 +41,35 @@ if (!file_exists("uploadBtn")) {
 //       parent.document.getElementById("file").value = "";
 //      window.parent.uploadpic("<?php echo 'img/' . $_FILES['file']['name']; ")
 //</script>
- //  <?php
+//  <?php
 //  } else {
 //    <script type="text/javascript">
 //     parent.document.getElementById("message").innerHTML = '<font color="#dedeff">file upload error</font>';
- //  </script>
+//  </script>
 //   <?php
 //   }
 //  } else {
-      
+
 // <script type="text/javascript">
 //    alert('$file size is too big');
 //  parent.document.getElementById("message").innerHTML = '<font color="#dedeff">file size is too big</font>';
 // </script>
+
+
+
+// Check the existence of file
+if (file_exists($file)) {
+    // Open the file for reading
+    $handle = fopen($file, "r") or die("ERROR: Cannot open the file.");
+
+    // Read fixed number of bytes from the file
+    $content = fread($handle, "20");
+
+    // Closing the file handle
+    fclose($handle);
+
+    // Display the file content 
+    echo $content;
+} else {
+    echo "ERROR: File does not exist.";
+}
