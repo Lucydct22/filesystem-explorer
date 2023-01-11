@@ -43,6 +43,18 @@
 </div>
     </form>
 
+
+
+    <!-- <form id="form" method="post" action="upload.php" enctype="multipart/form-data" target="iframe">
+        <input type="file" id="file" name="file"><br><br>
+        <input type="submit" id="submit" name="submit" value="Submit"><br>
+    </form>
+    <p id="message">Message will show here</p>
+    <img id="image" name="image" style="min-height:120;min-width:200;max-height:120px;”>
+<iframe id=" iframe" style="display:none;" name="iframe"></iframe> -->
+
+
+
     <div class="options">
         <a href="">Edit</a>
         <a href="">Upload</a>
@@ -58,7 +70,6 @@
         </div>
 
         <div class="content-container">
-
         </div>
 
         <div class="edition-container">
