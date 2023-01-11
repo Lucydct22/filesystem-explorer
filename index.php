@@ -38,12 +38,19 @@ if (isset($_POST['boton'])) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
+<<<<<<< HEAD
 
+=======
+                                echo $_FILES['archivo']['size']/1000000 . 'bytes';
+>>>>>>> 1d2d22f0552e7dc5f109dd79d7f76680460f02ca
                                 echo '</div>';
                             }
                         }
                     }
+<<<<<<< HEAD
                     echo $_FILES['archivo']['size'] / 1000000;
+=======
+>>>>>>> 1d2d22f0552e7dc5f109dd79d7f76680460f02ca
                     ?>
                 </div>
             </div>
