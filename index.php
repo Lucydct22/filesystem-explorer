@@ -1,9 +1,10 @@
 <?php
 $formats   = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3');
-$directory = 'root/assets';
+$directory = 'root/assets'.$name;
 if (isset($_POST['boton'])) {
     $name  = $_FILES['archivo']['name'];
     $saved = $_FILES['archivo']['tmp_name'];
+    $desc = $_POST['archivo'];
     $ext              = substr($name, strrpos($name, '.'));
     if (in_array($ext, $formats)) {
         if (move_uploaded_file($saved, "$directory/$name")) {
@@ -21,7 +22,7 @@ if (isset($_POST['boton'])) {
 <html>
 
 <head>
-
+    
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
@@ -29,7 +30,7 @@ if (isset($_POST['boton'])) {
 <body>
     <div class="container mt-3">
         <div class="card">
-
+            
             <div class="card-block">
                 <div class="row">
                     <?php
@@ -38,11 +39,12 @@ if (isset($_POST['boton'])) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
-
+                                
                                 echo '</div>';
                             }
                         }
                     }
+                    echo $_FILES['archivo']['size']/1000000;
                     ?>
                 </div>
             </div>
