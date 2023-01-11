@@ -1,4 +1,5 @@
 <?php
+
 //$archivo = "data.txt";
 //if (file_exists($archivo)) {
  //   echo "the file exists\n";
