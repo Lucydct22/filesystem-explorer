@@ -44,10 +44,17 @@ if (isset($_POST['boton'])) {
                             }
                         }
                     }
-                    $name = 'aarchive';
-                    if (file_exists($archive)) {
-                        echo "$name was last modified: " . date("F d Y H:i:s.", filemtime($name));
+                    $filename = "my-file.txt";
+
+                    if (file_exists($filename)) {
+                        $creationTimestamp = filemtime($filename);
+                        $modificationDate = date("d-m-Y h:m:i A", $creationTimestamp);
+
+                        echo "The file was last modified on {$modificationDate}";
+                    } else {
+                        echo "The file {$filename} doesnot exist";
                     }
+
 
                     ?>
                 </div>
