@@ -1,9 +1,9 @@
 <?php
-$archivo = "data.txt";
-if (file_exists($archivo)){
-    echo "the file exists\n";
-    echo "size of archive : " . filesize($archivo) . "bytes\n";
-}
+//$archivo = "data.txt";
+//if (file_exists($archivo)) {
+ //   echo "the file exists\n";
+ //   echo "size of archive : " . filesize($archivo) . "bytes\n";
+//}
 
 
 //move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]); 
