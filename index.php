@@ -39,22 +39,13 @@ if (isset($_POST['boton'])) {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
                                 echo $_FILES['archivo']['size'] / 1000000;
-
+                                echo filemtime('archivo');
+                                echo "<br>";
+                                echo "Content last changed: " . date("F d Y H:i:s.", filemtime('archivo'));
                                 echo '</div>';
                             }
                         }
                     }
-                    $filename = "my-file.txt";
-
-                    if (file_exists($filename)) {
-                        $creationTimestamp = filemtime($filename);
-                        $modificationDate = date("d-m-Y h:m:i A", $creationTimestamp);
-
-                        echo "The file was last modified on {$modificationDate}";
-                    } else {
-                        echo "The file {$filename} doesnot exist";
-                    }
-
 
                     ?>
                 </div>
