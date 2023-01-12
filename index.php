@@ -40,10 +40,9 @@ if (isset($_POST['boton'])) {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
                                 echo $_FILES['archivo']['size'] / 1000000;
-                                echo filemtime('archivo');
-                                echo "<br>";
-                                echo "Content last changed: ".date("F d Y H:i:s.", filemtime('archivo'));
-                                echo '</div>';
+                                echo "The last modification date " . $_FILES['archivo']['name'] . " was: " . date ('F d Y H:i:s.', filectime($directory.'/'.$archive));
+
+                                echo var_dump($directory.$archive);
                             }
 
 
