@@ -1,6 +1,7 @@
 <?php
 $formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
 $directory = 'root/assets';
+//$extension = glob("root/assets");
 if (isset($_POST['boton'])) {
     $name = $_FILES['archivo']['name'];
     $saved = $_FILES['archivo']['tmp_name'];
@@ -17,8 +18,7 @@ if (isset($_POST['boton'])) {
 
 
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE htm <html>
 
 <head>
 
