@@ -6,7 +6,7 @@ $url_insert = dirname(__DIR__) . "/root";
 if (isset($_POST['boton'])) {
     $name = $_FILES['archivo']['name'];
     $saved = $_FILES['archivo']['tmp_name'];
-   
+
     $ext = substr($name, strrpos($name, '.'));
     if (in_array($ext, $formats)) {
         if (move_uploaded_file($saved, "$directory/$name")) {
@@ -19,23 +19,22 @@ if (isset($_POST['boton'])) {
 
 
 ?>
-
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    </head>
-    
-    <body>
-        <div class="container mt-3">
-            <div class="card">
-                
-                <div class="card-block">
-                    <div class="row">
-                        <?php
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="card">
+
+            <div class="card-block">
+                <div class="row">
+                    <?php
                     if ($dir = opendir($directory)) {
                         while ($archive = readdir($dir)) {
                             if ($archive != '.' && $archive != '..') {
@@ -47,9 +46,7 @@ if (isset($_POST['boton'])) {
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
                                 echo '<img src="'.$directory.'/icons'. '/' .pathinfo($archive)["extension"]. '.png"'. '/>';
                             }
-                            
                         }
-                    
                     }
                     ?>
                 </div>
