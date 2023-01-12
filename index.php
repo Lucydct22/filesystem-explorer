@@ -49,6 +49,8 @@ if (isset($_POST['boton'])) {
                 </div>
             </div>
         </div>
+
+
         <h1>Selecciona tu archivo</h1>
         <form method="post" action="" enctype="multipart/form-data">
             <div class="form-group">
