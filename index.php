@@ -1,11 +1,11 @@
 <?php
-$formats   = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3');
+$formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3');
 $directory = 'root/assets';
 if (isset($_POST['boton'])) {
-    $name  = $_FILES['archivo']['name'];
+    $name = $_FILES['archivo']['name'];
     $saved = $_FILES['archivo']['tmp_name'];
 
-    $ext              = substr($name, strrpos($name, '.'));
+    $ext = substr($name, strrpos($name, '.'));
     if (in_array($ext, $formats)) {
         if (move_uploaded_file($saved, "$directory/$name")) {
             echo "Congratulations! $name uploaded correctly";
@@ -23,7 +23,8 @@ if (isset($_POST['boton'])) {
 <head>
 
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 
 <body>
@@ -39,11 +40,14 @@ if (isset($_POST['boton'])) {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
                                 echo $_FILES['archivo']['size'] / 1000000;
-                                echo "<br>";
-                               
+                                echo "The last modification date " . $_FILES['archivo']['name'] . " was: " . date ('F d Y H:i:s.', filectime($directory.'/'.$archive));
+
+                                echo var_dump($directory.$archive);
                             }
+
+
                         }
-                       
+
                     }
                     ?>
                 </div>
@@ -60,7 +64,9 @@ if (isset($_POST['boton'])) {
         </form>
     </div>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
