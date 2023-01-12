@@ -95,32 +95,3 @@
 // } else {
 //     echo "ERROR: File does not exist.";
 // }
-public function getIconAttribute() {
-
-    $extensions = [
-        'jpg' => 'jpeg.png',
-        'png' => 'png.png',
-        'pdf' => 'pdfdocument.png',
-        'doc' => 'wordicon.jpg',
-    ];
-
-    return array_get($extensions,$this->extension,'unknown.png');
-}
-public function getIconAttribute() {
-    $extension = strtolower($this->extension);
-
-    $rewrite_map = array(
-        'jpeg' => 'jpg',
-        'docx' => 'doc'
-    );
-
-    if(isset($rewrite_map[$extension])) {
-        $extension = $rewrite_map[$extension];
-    }
-
-    if(file_exists('/root/assets/icons/' . $extension . '.png')) {
-        return $extension . '.png';
-    }
-
-    return 'unknown.png';
-}
