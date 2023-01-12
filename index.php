@@ -1,5 +1,5 @@
 <?php
-$formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3');
+$formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
 $directory = 'root/assets';
 if (isset($_POST['boton'])) {
     $name = $_FILES['archivo']['name'];
@@ -39,9 +39,9 @@ if (isset($_POST['boton'])) {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
                                 echo $_FILES['archivo']['size'] / 1000000;
-                                echo "The last modification date " . $_FILES['archivo']['name'] . " was: " . date ('F d Y H:i:s.', filectime($directory.'/'.$archive));
+                                echo "The last modification date " . $_FILES['archivo']['name'] . " was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
 
-                                echo var_dump($directory.$archive);
+                                echo var_dump($directory . $archive);
                             }
                         }
                     }
