@@ -1,7 +1,6 @@
 <?php
 $formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
 $directory = 'root/assets';
-//$extension = glob("root/assets");
 if (isset($_POST['boton'])) {
     $name = $_FILES['archivo']['name'];
     $saved = $_FILES['archivo']['tmp_name'];
@@ -18,7 +17,8 @@ if (isset($_POST['boton'])) {
 
 
 ?>
-<!DOCTYPE htm <html>
+<!DOCTYPE html>
+<html>
 
 <head>
 
@@ -38,10 +38,9 @@ if (isset($_POST['boton'])) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br />";
+                                echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
                                 echo $_FILES['archivo']['size'] / 1000000;
-                                echo "The last modification date " . $_FILES['archivo']['name'] . " was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
-
-                                echo var_dump($directory . $archive);
+                                echo "The last modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                             }
                         }
                     }
