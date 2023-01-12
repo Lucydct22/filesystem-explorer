@@ -1,5 +1,5 @@
 <?php
-$formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3');
+$formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
 $directory = 'root/assets';
 
 
@@ -53,6 +53,8 @@ if (isset($_POST['boton'])) {
                 </div>
             </div>
         </div>
+
+
         <h1>Selecciona tu archivo</h1>
         <form method="post" action="" enctype="multipart/form-data">
             <div class="form-group">
