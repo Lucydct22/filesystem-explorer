@@ -48,11 +48,10 @@ if (isset($_POST['boton'])) {
             </div>
         </div>
     </nav>
-    <div class="card border-secondary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Quick acces</div>
-        <div class="card-body">
-            <button type="button" id ="upload-btn" class="upload-btn" data-bs-dismiss="modal" aria-label="Upload"></button>
-        </div>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" id="upload-btn">Upload</a>
+     
+    </ol>
     </div>
     <ul class="nav nav-pills">
         <li class="nav-item dropdown">

@@ -1,10 +1,15 @@
 const uploadArchive = document.getElementById('upload-btn');
-
+const uploadModal = document.getElementById('upload-modal');
 
 
 uploadArchive.addEventListener("click", uploadFile)
+uploadModal.addEventListener("click", uploadFile)
 
 function uploadFile(e){
-    let uploadNewFile = document.createElement(file)
-    uploadNewFile.innerHTML = `<button type="button" onclick="uploadFile(event)" class="btn  btn-outline-secondary view-more-btn" data-bs-toggle="modal" data-bs-target="#uploadArchive"> `;
+ if(uploadModal.classList.contains("d-none")){
+    uploadModal.classList.remove("d-none");
+ }else {
+    uploadModal.classList.add("d-none");
+ }
+
 }
