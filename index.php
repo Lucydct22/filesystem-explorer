@@ -17,7 +17,6 @@ if (isset($_POST['boton'])) {
     }
 }
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,11 +49,17 @@ if (isset($_POST['boton'])) {
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#" id="upload-btn">Upload</a>
             <div class="card border-secondary mb-3 d-none" id="upload-modal" style="max-width: 20rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h4 class="card-title">Secondary card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+
+                <div class="card-body"></div>
+
+                <form method="post" action="" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" class="form-control-file" id="archvio" aria-describedby="fileHelp" name="archivo">
+
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="boton">Upload</button>
+                </form>
+
         </li>
         <li class="breadcrumb-item active">Library</li>
     </ol>
@@ -96,16 +101,6 @@ if (isset($_POST['boton'])) {
             </div>
         </div>
 
-
-        <h1>Selecciona tu archivo</h1>
-        <form method="post" action="" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="archvio">File</label>
-                <input type="file" class="form-control-file" id="archvio" aria-describedby="fileHelp" name="archivo">
-
-            </div>
-            <button type="submit" class="btn btn-primary" name="boton">Upload</button>
-        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
