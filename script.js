@@ -1,14 +1,11 @@
- document.getElementById('upload-btn').addEventListener("click", ()=>{
- printModal('   <div class="card border-secondary mb-3 d-none" id="upload-modal" style="max-width: 20rem;">
- <div class="card-header">Header</div>
- <div class="card-body">
-   <h4 class="card-title">Secondary card title</h4>
-   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
- </div></li>
-       <li class="breadcrumb-item active">Library</li></div> ')
- });
+const uploadArchive = document.getElementById('upload-btn');
+const uploadModal = document.getElementById('upload-modal');
 
 
+uploadArchive.addEventListener("click", uploadFile)
+uploadModal.addEventListener("click", uploadFile)
 
+function uploadFile(e){
+ 
 
-
+}
