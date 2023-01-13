@@ -90,7 +90,7 @@ if (isset($_POST['boton'])) {
         </div>
 
 
-        <h1>Selecciona tu archivo</h1>
+        <h2>Selecciona tu archivo</h2>
         <form method="post" action="" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="archvio">File</label>
