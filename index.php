@@ -25,10 +25,46 @@ if (isset($_POST['boton'])) {
 <head>
 
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="root/assets/logo berta y lucy.png" alt="Logo" width="50" height="45" class="d-inline-block align-text-top" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav me-auto">
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Create</a></li>
+        <li class="breadcrumb-item"><a href="#">Upload</a></li>
+        <li class="breadcrumb-item active"><a href="#">Edit</a></li>
+        <li class="breadcrumb-item active"><a href="#">Delete</a></li>
+    </ol>
+    <ul class="nav nav-pills">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quick access</a>
+            <div class="dropdown-menu" style="">
+                <a class="dropdown-item" href="#">Images</a>
+                <a class="dropdown-item" href="#">Documents</a>
+                <a class="dropdown-item" href="#">Media</a>
+                <a class="dropdown-item" href="#">Others</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Trash</a>
+            </div>
+        </li>
+    </ul>
     <div class="container mt-3">
         <div class="card">
 
@@ -40,11 +76,11 @@ if (isset($_POST['boton'])) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br/>";
-                                echo '<img src="'.$directory.'/'.$archive.'" width = 300px title="imagen" alt="imagen"/>';
+                                echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
                                 echo $_FILES['archivo']['size'] / 1000000;
-                                echo "The last modification date was: " . date ('F d Y H:i:s.', filectime($directory.'/'.$archive));
+                                echo "The last modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
-                                echo '<img src="'.$directory.'/icons'. '/' .pathinfo($archive)["extension"]. '.png"'. '/>';
+                                echo '<img src="' . $directory . '/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
                             }
                         }
                     }
@@ -65,7 +101,8 @@ if (isset($_POST['boton'])) {
         </form>
     </div>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
