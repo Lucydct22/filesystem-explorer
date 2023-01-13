@@ -5,7 +5,6 @@ const uploadModal = document.getElementById('upload-modal');
 uploadArchive.addEventListener("click", uploadFile)
 uploadModal.addEventListener("click", uploadFile)
 
-function uploadFile(e){
- 
+
 
 }
