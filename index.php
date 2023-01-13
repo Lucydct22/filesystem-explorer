@@ -26,14 +26,15 @@ if (isset($_POST['boton'])) {
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
-    <script src="script.js" defer></script>
+    <script src="script.js?v<?php echo time(); ?>" defer></script>
+    <link rel="stylesheet" href="style.css?v<?php echo time(); ?>">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="root/assets/logo berta y lucy.png" alt="Logo" width="50" height="45" class="d-inline-block align-text-top" /></a>
+            <a class="navbar-brand" href="#"><img src="assets/logo/logo.png" alt="Logo" width="50" height="45" class="d-inline-block align-text-top" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -69,7 +70,7 @@ if (isset($_POST['boton'])) {
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quick access</a>
             <div class="dropdown-menu" style="">
-                <a class="dropdown-item" href="#">Images</a>
+                <a class="dropdown-item"  id="createFolder-btn">Add Folder</a>
                 <a class="dropdown-item" href="#">Documents</a>
                 <a class="dropdown-item" href="#">Media</a>
                 <a class="dropdown-item" href="#">Others</a>
@@ -78,7 +79,8 @@ if (isset($_POST['boton'])) {
             </div>
         </li>
     </ul>
-    <div class="container mt-3">
+    <div class="container mt-3" id="main-container">
+        <?php require_once('./folderAndFiles.php')?>
         <div class="card">
 
             <div class="card-block">
@@ -88,10 +90,10 @@ if (isset($_POST['boton'])) {
                         while ($archive = readdir($dir)) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
-                                echo "Archive: <strong>$archive</strong><br/>";
+                                // echo "Archive: <strong>$archive</strong><br/>";
                                 // echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
-                                echo $_FILES['archivo']['size'] / 1000000;
-                                echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
+                                // echo $_FILES['archivo']['size'] / 1000000;
+                                // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
                                 echo '<img src="' . $directory . '/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
                             }
