@@ -14,6 +14,7 @@ if (isset($_POST['boton'])) {
         } else {
             echo ' sorry, an error occurred';
         }
+        
     }
 }
 
@@ -88,9 +89,9 @@ if (isset($_POST['boton'])) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
                                 echo "Archive: <strong>$archive</strong><br/>";
-                                echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
+                                // echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
                                 echo $_FILES['archivo']['size'] / 1000000;
-                                echo "The last modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
+                                echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
                                 echo '<img src="' . $directory . '/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
                             }
