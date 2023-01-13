@@ -6,6 +6,10 @@ uploadArchive.addEventListener("click", uploadFile)
 uploadModal.addEventListener("click", uploadFile)
 
 function uploadFile(e){
+ () => 
+    uploadArchive.classList.remove("d-none");
  
+
+ false
 
 }

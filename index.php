@@ -26,16 +26,15 @@ if (isset($_POST['boton'])) {
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
+    <script src="script.js"></script>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="root/assets/logo berta y lucy.png" alt="Logo" width="50"
-                    height="45" class="d-inline-block align-text-top" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
-                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><img src="root/assets/logo berta y lucy.png" alt="Logo" width="50" height="45" class="d-inline-block align-text-top" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor03">
@@ -50,19 +49,19 @@ if (isset($_POST['boton'])) {
     </nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#" id="upload-btn">Upload</a>
-        <div class="card border-secondary mb-3 d-none" id="upload-modal"style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Secondary card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div></li>
+            <div class="card border-secondary mb-3 d-none" id="upload-modal" style="max-width: 20rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Secondary card title</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+        </li>
         <li class="breadcrumb-item active">Library</li>
     </ol>
     </div>
     <ul class="nav nav-pills">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">Quick access</a>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quick access</a>
             <div class="dropdown-menu" style="">
                 <a class="dropdown-item" href="#">Images</a>
                 <a class="dropdown-item" href="#">Documents</a>
@@ -109,9 +108,7 @@ if (isset($_POST['boton'])) {
         </form>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 </body>
 
