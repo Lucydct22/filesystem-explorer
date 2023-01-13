@@ -51,7 +51,7 @@ if (isset($_POST['boton'])) {
     <div class="card border-secondary mb-3" style="max-width: 20rem;">
         <div class="card-header">Quick acces</div>
         <div class="card-body">
-            <button type="button" class="upload-btn" data-bs-dismiss="modal" aria-label="Upload"></button>
+            <button type="button" id ="upload-btn" class="upload-btn" data-bs-dismiss="modal" aria-label="Upload"></button>
         </div>
     </div>
     <ul class="nav nav-pills">
