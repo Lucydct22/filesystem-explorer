@@ -26,7 +26,7 @@ if (isset($_POST['boton'])) {
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
