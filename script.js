@@ -45,7 +45,3 @@ function navigate(){
   .catch((err) => console.log("Request: ", err));  
 }
 
-
-location.reload(){
-return false;
-}
