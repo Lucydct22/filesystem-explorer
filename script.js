@@ -8,7 +8,7 @@ const onclickCreate = document.getElementById('onclickCreateFolder');
 uploadArchive.addEventListener("click", uploadFile)
 uploadModal.addEventListener("click", uploadFile)
 createFolder.addEventListener("click", createDirectory)
-onclickCreate.addEventListener("click", navigate)
+// onclickCreate.addEventListener("click", navigate)
 
 
 function uploadFile(e){
@@ -31,19 +31,20 @@ function createDirectory(e){
         .catch((err) => console.log("Request: ", err));    
 }
 
-function navigate(){
-  e.target.getattribute('path');
-  fetch('./folderAndFiles.php', {
+function navigate(event){
+  let path = event.target.getAttribute('path');
+  console.log(path)
+  fetch(`./navigate.php?path=${path}`, {
     method: "GET",
-  })
-  .then((response) => response.json())
-  .then ((data) => {
-    let newFile = document.createElement('p')
-    newFile.innerText = data.path
-    ppalContainer.appendChild(newFile)
-
+  }).then((res)=>{
+    res.json()
+  }).then((data)=>{
+    console.log(data)
+    window.location.href = "./index.php";
   })
   .catch((err) => console.log("Request: ", err));  
+// window.location.href = `./navigate.php?path=${path}`
+  
 }
 
 function reloadThePage(){

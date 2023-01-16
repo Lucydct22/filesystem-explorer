@@ -7,8 +7,8 @@ function folderAndFiles($dir)
     foreach ($content as $fileOrFolder) {
         if (is_dir($fileOrFolder)) {
             echo "
-                <div class='folder' path=$fileOrFolder id='onclickCreateFolder' onclick='navigate()'>
-                    <p href=$fileOrFolder>$fileOrFolder</p>
+                <div class='folder' path='$fileOrFolder' id='onclickCreateFolder' onclick='navigate(event)'>
+                    <p href='$fileOrFolder'>$fileOrFolder</p>
                 </div>
             ";
         }
@@ -20,10 +20,5 @@ function folderAndFiles($dir)
                 </div>
             ";
         }
-
-
     }
 }
-
-
-

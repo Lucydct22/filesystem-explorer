@@ -84,31 +84,37 @@ if (isset($_POST['boton'])) {
     </ul>
     <div class="container mt-3" id="main-container">
         <?php require_once('./folderAndFiles.php');
-        folderAndFiles("./root");
+        session_start();
+        if (isset($_SESSION["path"])) {
+            folderAndFiles($_SESSION["path"]);
+        } else {
+            folderAndFiles("./root");
+        }
+
         ?>
         <div class="card">
 
             <div class="card-block">
                 <div class="row">
                     <?php
-                    if ($dir = opendir("$directory")) {
-                        print_r(glob('./root/*'));
-                        foreach (glob('./root/*') as $archive) {
-                            echo "<img src='$archive'>";
-                            //if ($archive != '.' && $archive != '..') {
-                            // echo '<div class="col-sm-3 col-xs-12">';
-                            // echo "Archive: <strong>$archive</strong><br/>";
-                            // echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
-                            // echo $_FILES['archivo']['size'] / 1000000;
-                            // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
-                            //  $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
-                            //  echo "variable8" . $archive;
-                            // $infop = pathinfo($archive)["extension"];
-                            // echo '<img src="' . $directory . '/assets/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
-                            // echo "<img src='./assets/icons/$infop .png'/>";
-                        }
-                    }
-                    //}
+                    //if ($dir = opendir("$directory")) {
+                    // print_r(glob('./root/*'));
+                    //foreach (glob('./root/*') as $archive) {
+                    // echo "<img src='$archive'>";
+                    //if ($archive != '.' && $archive != '..') {
+                    // echo '<div class="col-sm-3 col-xs-12">';
+                    // echo "Archive: <strong>$archive</strong><br/>";
+                    // echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
+                    // echo $_FILES['archivo']['size'] / 1000000;
+                    // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
+                    //  $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
+                    //  echo "variable8" . $archive;
+                    // $infop = pathinfo($archive)["extension"];
+                    // echo '<img src="' . $directory . '/assets/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
+                    // echo "<img src='./assets/icons/$infop .png'/>";
+                    //   }
+                    //  }
+                    // }
                     ?>
                 </div>
             </div>
