@@ -1,6 +1,6 @@
 <?php
 $formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
-$directory = 'root/assets';
+$directory = 'root/';
 $url_insert = dirname(__DIR__) . "/root";
 
 if (isset($_POST['boton'])) {
@@ -14,7 +14,6 @@ if (isset($_POST['boton'])) {
         } else {
             echo ' sorry, an error occurred';
         }
-        
     }
 }
 
@@ -70,7 +69,7 @@ if (isset($_POST['boton'])) {
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quick access</a>
             <div class="dropdown-menu" style="">
-                <a class="dropdown-item"  id="createFolder-btn">Add Folder</a>
+                <a class="dropdown-item" id="createFolder-btn">Add Folder</a>
                 <a class="dropdown-item" href="#">Documents</a>
                 <a class="dropdown-item" href="#">Media</a>
                 <a class="dropdown-item" href="#">Others</a>
@@ -97,7 +96,7 @@ if (isset($_POST['boton'])) {
                                 // echo $_FILES['archivo']['size'] / 1000000;
                                 // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
-                                echo '<img src="' . $directory . '/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
+                                echo '<img src="' . $directory . '/root' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
                             }
                         }
                     }
