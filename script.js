@@ -32,6 +32,7 @@ function createDirectory(e){
 }
 
 function navigate(){
+  e.target.getattribute('path');
   fetch('./folderAndFiles.php', {
     method: "GET",
   })
