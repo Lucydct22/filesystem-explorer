@@ -6,6 +6,7 @@ const onclickCreate = document.getElementsByClassName('onclickCreateFolder');
 const backBtn = document.getElementById('backBtn')
 
 
+
 uploadArchive.addEventListener("click", uploadFile)
 uploadModal.addEventListener("click", uploadFile)
 createFolder.addEventListener("click", createDirectory)
@@ -67,4 +68,18 @@ function navigateToRoot(){
     window.location.href = "./index.php";
   })
   .catch((err) => console.log("Request: ", err));  
+}
+
+function deleteFile(event){
+const path = event.target.getAttribute('path')
+fetch(`./delete.php?path=${path}`, {
+  method: "GET",
+}).then((res)=>{
+  res.json()
+}).then((data)=>{
+  console.log(data)
+ reloadThePage()
+})
+.catch((err) => console.log("Request: ", err));  
+//window.location.href = `./navigate.php?path=${path}`
 }
