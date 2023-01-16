@@ -1,6 +1,6 @@
 <?php
 $formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
-$directory = 'root/assets';
+$directory = 'root/';
 $url_insert = dirname(__DIR__) . "/root";
 
 if (isset($_POST['boton'])) {
@@ -97,7 +97,7 @@ if (isset($_POST['boton'])) {
                                 // echo $_FILES['archivo']['size'] / 1000000;
                                 // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
-                                echo '<img src="' . $directory . '/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
+                                echo '<img src="' . $directory . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
                             }
                         }
                     }
