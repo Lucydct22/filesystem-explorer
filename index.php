@@ -52,6 +52,7 @@ if (isset($_POST['boton'])) {
         </div>
     </nav>
     <ol class="breadcrumb">
+        <p id="backBtn">BACK</p>
         <li class="breadcrumb-item"><a href="#" id="upload-btn">Upload</a>
             <div class="card border-secondary mb-3 d-none" id="upload-modal" style="max-width: 20rem;">
 
