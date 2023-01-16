@@ -5,8 +5,12 @@ $url_insert = dirname(__DIR__) . "/root";
 
 if (isset($_POST['boton'])) {
     $name = $_FILES['archivo']['name'];
-    $saved = $_FILES['archivo']['tmp_name'];
 
+
+    $saved = $_FILES['archivo']['tmp_name'];
+    echo "variable1" . $saved;
+    echo "<br>";
+    echo  "variable3" . "$directory/$name";
     $ext = substr($name, strrpos($name, '.'));
     if (in_array($ext, $formats)) {
         if (move_uploaded_file($saved, "$directory/$name")) {
@@ -87,7 +91,7 @@ if (isset($_POST['boton'])) {
             <div class="card-block">
                 <div class="row">
                     <?php
-                    if ($dir = opendir($directory)) {
+                    if ($dir = opendir("$directory")) {
                         while ($archive = readdir($dir)) {
                             if ($archive != '.' && $archive != '..') {
                                 echo '<div class="col-sm-3 col-xs-12">';
@@ -96,7 +100,9 @@ if (isset($_POST['boton'])) {
                                 // echo $_FILES['archivo']['size'] / 1000000;
                                 // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
-                                echo '<img src="' . $directory . '/root' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
+                                $infop = pathinfo($archive)["extension"];
+                                echo "variable5" . $directory . '/assets/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
+                                echo "<img src='./assets/icons/$infop.png'/>";
                             }
                         }
                     }
