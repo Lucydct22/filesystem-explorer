@@ -1,7 +1,7 @@
 <?php
 $formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
 $directory = './root';
-$url_insert = dirname(__DIR__) . "/root";
+$url_insert = dirname(__DIR__) . "./root";
 
 if (isset($_POST['boton'])) {
     $name = $_FILES['archivo']['name'];
@@ -94,14 +94,14 @@ if (isset($_POST['boton'])) {
                     if ($dir = opendir("$directory")) {
                         while ($archive = readdir($dir)) {
                             if ($archive != '.' && $archive != '..') {
-                                // echo '<div class="col-sm-3 col-xs-12">';
+                                echo '<div class="col-sm-3 col-xs-12">';
                                 // echo "Archive: <strong>$archive</strong><br/>";
                                 // echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
                                 // echo $_FILES['archivo']['size'] / 1000000;
                                 // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
                                 $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
                                 // $infop = pathinfo($archive)["extension"];
-                                echo '<img src="'.$directory . '/assets/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
+                                echo '<img src="'.$directory . '/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
                                 // echo "<img src='./assets/icons/$infop .png'/>";
                             }
                         }
