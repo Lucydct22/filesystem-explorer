@@ -24,4 +24,3 @@ function folderAndFiles($dir)
 
     }
 }
-folderAndFiles("./root");

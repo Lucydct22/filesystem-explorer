@@ -80,7 +80,9 @@ if (isset($_POST['boton'])) {
         </li>
     </ul>
     <div class="container mt-3" id="main-container">
-        <?php require_once('./folderAndFiles.php')?>
+        <?php require_once('./folderAndFiles.php');
+        folderAndFiles("./root");
+        ?>
         <div class="card">
 
             <div class="card-block">
