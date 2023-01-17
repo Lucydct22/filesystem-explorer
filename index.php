@@ -13,9 +13,6 @@ if (isset($_POST['boton'])) {
     $ext = substr($name, strrpos($name, '.'));
     if (in_array($ext, $formats)) {
         if (move_uploaded_file($saved, "$directory/$name")) {
-            echo "Congratulations! $name uploaded correctly";
-        } else {
-            echo ' sorry, an error occurred';
         }
     }
 }

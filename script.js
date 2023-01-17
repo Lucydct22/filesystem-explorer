@@ -8,7 +8,6 @@ const renameFileInput= document.querySelectorAll('#renameFile')
 
 
 uploadArchive.addEventListener("click", uploadFile)
-uploadModal.addEventListener("click", uploadFile)
 createFolder.addEventListener("click", createDirectory)
 for(let button of renameFileInput ) {
   button.addEventListener("focusout", renameFile)
