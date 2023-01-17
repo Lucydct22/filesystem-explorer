@@ -1,9 +1,6 @@
 <?php
 
 $deleteFile = $_GET['path'];
-// echo json_encode([
-//     'path' => $deleteFile
-// ]);
 
 rrmdir($deleteFile);
 
