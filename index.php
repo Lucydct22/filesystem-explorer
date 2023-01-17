@@ -74,7 +74,7 @@ if (isset($_POST['boton'])) {
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quick access</a>
             <div class="dropdown-menu" style="">
                 <a class="dropdown-item" id="createFolder-btn">Add Folder</a>
-                <a class="dropdown-item" id="rename-btn" action="renameFile.php" method="POST" onclick="renameFileOrDirectory(event)">Rename</a>
+                <a class="dropdown-item" id="rename-btn">Rename</a>
                 <a class="dropdown-item" href="#">Media</a>
                 <a class="dropdown-item" href="#">Others</a>
                 <div class="dropdown-divider"></div>
