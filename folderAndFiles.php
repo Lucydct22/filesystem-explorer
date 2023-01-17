@@ -9,6 +9,7 @@ function folderAndFiles($dir)
             echo "
                 <div class='folder' path='$fileOrFolder' class='onclickCreateFolder' onclick='navigate(event)'>
                     <p href='$fileOrFolder'>$fileOrFolder</p>
+                <button path='$fileOrFolder' onclick=deleteFile(event)>Delete</button>
                 </div>
             ";
         }
@@ -16,6 +17,7 @@ function folderAndFiles($dir)
         if (is_file($fileOrFolder)) {
             echo "
                 <div class='file' path='$fileOrFolder'>
+                <button path='$fileOrFolder' onclick=deleteFile(event)>Delete</button>
                     <p>$fileOrFolder</p>
                 </div>
             ";
