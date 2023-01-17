@@ -1,7 +1,7 @@
 <?php
 $formats = array('.jpg', '.png', '.gif', '.doc', '.csv', '.txt', '.pdf', '.zip', '.rar', '.mp4', '.mp3', '.odt');
 $directory = './root';
-$url_insert = dirname(__DIR__) . "/root";
+$url_insert = dirname(__DIR__) . "./root";
 
 if (isset($_POST['boton'])) {
     $name = $_FILES['archivo']['name'];
@@ -74,7 +74,7 @@ if (isset($_POST['boton'])) {
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quick access</a>
             <div class="dropdown-menu" style="">
                 <a class="dropdown-item" id="createFolder-btn">Add Folder</a>
-                <a class="dropdown-item" href="#">Documents</a>
+                <a class="dropdown-item" id="rename-btn">Rename</a>
                 <a class="dropdown-item" href="#">Media</a>
                 <a class="dropdown-item" href="#">Others</a>
                 <div class="dropdown-divider"></div>

@@ -10,6 +10,7 @@ const backBtn = document.getElementById('backBtn')
 uploadArchive.addEventListener("click", uploadFile)
 uploadModal.addEventListener("click", uploadFile)
 createFolder.addEventListener("click", createDirectory)
+// renameBtn.addEventListener("click", renameFileOrDirectory)
 
 for(let folder of onclickCreate){
 
