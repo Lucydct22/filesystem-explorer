@@ -78,7 +78,7 @@ fetch(`./delete.php?path=${path}`, {
   res.json()
 }).then((data)=>{
   console.log(data)
- reloadThePage()
+reloadThePage()
 })
 .catch((err) => console.log("Request: ", err));  
 //window.location.href = `./navigate.php?path=${path}`
