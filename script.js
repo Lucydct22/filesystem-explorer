@@ -31,9 +31,11 @@ function createDirectory(e){
       })
         .then((response) => response.json())
         .then((data) => {
+            
             let newFolder = document.createElement('p')
             newFolder.innerText = data.path
             ppalContainer.appendChild(newFolder)
+            window.location.href="./index.php"
         })
         .catch((err) => console.log("Request: ", err));    
 }
@@ -79,7 +81,8 @@ fetch(`./delete.php?path=${path}`, {
   res.json()
 }).then((data)=>{
   console.log(data)
-reloadThePage()
+  window.location.href="index.php";
+//reloadThePage()
 })
 .catch((err) => console.log("Request: ", err));  
 //window.location.href = `./navigate.php?path=${path}`
