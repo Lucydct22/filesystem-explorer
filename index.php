@@ -8,9 +8,8 @@ if (isset($_POST['boton'])) {
 
 
     $saved = $_FILES['archivo']['tmp_name'];
-    echo "variable1" . $saved;
-    echo "<br>";
-    echo  "variable3" . "$directory/$name";
+    // echo "variable1" . $saved;
+    // echo  "variable3" . "$directory/$name";
     $ext = substr($name, strrpos($name, '.'));
     if (in_array($ext, $formats)) {
         if (move_uploaded_file($saved, "$directory/$name")) {
