@@ -5,6 +5,8 @@ const ppalContainer = document.getElementById('main-container');
 const onclickCreate = document.getElementsByClassName('onclickCreateFolder');
 const backBtn = document.getElementById('backBtn')
 const renameFileInput= document.querySelectorAll('#renameFile')
+const rowItem = document.getElementById('rowItem')
+
 
 
 uploadArchive.addEventListener("click", uploadFile)
@@ -106,4 +108,32 @@ function renameFile(event){
   })
   .catch((err) => console.log("Request: ", err));  
   //window.location.href = `./navigate.php?path=${path}`
+  }
+
+  function showFile(event){
+    rowItem.innerHTML=''
+   let path=event.target.getAttribute('path')
+   let splitPath=path?.split('.')
+   let extension=splitPath && splitPath[splitPath.length-1]
+   console.log(extension)
+   switch(extension){
+    case 'jpg':
+      rowItem.innerHTML=`
+      <img src=${path}/>`
+    case 'png':
+        rowItem.innerHTML=`
+        <img src=${path}/>`
+    case 'mp3':
+          rowItem.innerHTML=`
+          <audio src=${path}/>`
+    case 'mp4':
+            rowItem.innerHTML=`
+            <video src=${path}/>`
+     
+   }
+
+
+     let img=document.createElement('img')
+     img.setAttribute('src',path)
+     rowItem.appendChild(img)
   }

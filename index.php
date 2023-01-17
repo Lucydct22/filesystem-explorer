@@ -92,25 +92,28 @@ if (isset($_POST['boton'])) {
         <div class="card">
 
             <div class="card-block">
-                <div class="row">
+                <div id='rowItem' class="row">
+
                     <?php
-                    //if ($dir = opendir("$directory")) {
-                    // print_r(glob('./root/*'));
-                    //foreach (glob('./root/*') as $archive) {
-                    // echo "<img src='$archive'>";
-                    //if ($archive != '.' && $archive != '..') {
-                    // echo '<div class="col-sm-3 col-xs-12">';
-                    // echo "Archive: <strong>$archive</strong><br/>";
-                    // echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
-                    // echo $_FILES['archivo']['size'] / 1000000;
-                    // echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
-                    //  $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
-                    //  echo "variable8" . $archive;
-                    // $infop = pathinfo($archive)["extension"];
-                    // echo '<img src="' . $directory . '/assets/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
-                    // echo "<img src='./assets/icons/$infop .png'/>";
-                    //   }
-                    //  }
+
+
+                    // if ($dir = opendir("$directory")) {
+                    //     print_r(glob('./root/*'));
+                    //     foreach (glob('./root/*') as $archive) {
+                    //         echo "<img src='$archive'>";
+                    //         if ($archive != '.' && $archive != '..') {
+                    //             echo '<div class="col-sm-3 col-xs-12">';
+                    //             echo "Archive: <strong>$archive</strong><br/>";
+                    //             echo '<img src="' . $directory . '/' . $archive . '" width = 300px title="imagen" alt="imagen"/>';
+                    //             echo $_FILES['archivo']['size'] / 1000000;
+                    //             echo "Modification date was: " . date('F d Y H:i:s.', filectime($directory . '/' . $archive));
+                    //             $url_target = str_replace('\\', '/', $url_insert) . '/' . $archive;
+                    //             echo "variable8" . $archive;
+                    //             $infop = pathinfo($archive)["extension"];
+                    //             echo '<img src="' . $directory . '/assets/icons' . '/' . pathinfo($archive)["extension"] . '.png"' . '/>';
+                    //             echo "<img src='./assets/icons/$infop .png'/>";
+                    //         }
+                    //     }
                     // }
                     ?>
                 </div>

@@ -19,7 +19,7 @@ function folderAndFiles($dir)
 
         if (is_file($fileOrFolder)) {
             echo "
-                <div class='file' path='$fileOrFolder'>
+                <div class='file' path='$fileOrFolder' onclick='showFile(event)'>
               
                     <p>$fileOrFolder</p>
                 </div>
