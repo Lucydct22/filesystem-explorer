@@ -4,13 +4,16 @@ const createFolder = document.getElementById('createFolder-btn');
 const ppalContainer = document.getElementById('main-container');
 const onclickCreate = document.getElementsByClassName('onclickCreateFolder');
 const backBtn = document.getElementById('backBtn')
-
+const renameFileInput= document.querySelectorAll('#renameFile')
 
 
 uploadArchive.addEventListener("click", uploadFile)
 uploadModal.addEventListener("click", uploadFile)
 createFolder.addEventListener("click", createDirectory)
-// renameBtn.addEventListener("click", renameFileOrDirectory)
+for(let button of renameFileInput ) {
+  button.addEventListener("focusout", renameFile)
+}
+
 
 for(let folder of onclickCreate){
 
@@ -87,3 +90,21 @@ fetch(`./delete.php?path=${path}`, {
 .catch((err) => console.log("Request: ", err));  
 //window.location.href = `./navigate.php?path=${path}`
 }
+
+
+function renameFile(event){
+  const path = event.target.getAttribute('path')
+  const inputvalue= event.target.value
+ // console.log(inputvalue)
+  fetch(`./rename.php?path=${path}&inputValue=${inputvalue}`, { 
+    method: "GET",
+  }).then((res)=>{
+    res.json()
+  }).then((data)=>{
+  if (data){console.log(data)}
+   window.location.href="index.php";
+  //reloadThePage()
+  })
+  .catch((err) => console.log("Request: ", err));  
+  //window.location.href = `./navigate.php?path=${path}`
+  }

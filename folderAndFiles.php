@@ -11,7 +11,9 @@ function folderAndFiles($dir)
                     <p href='$fileOrFolder'>$fileOrFolder</p>
                
                 </div>
+                <input id='renameFile'path='$fileOrFolder' ></input>
                 <button path='$fileOrFolder' onclick=deleteFile(event)>Delete</button>
+                
             ";
         }
 
@@ -21,6 +23,7 @@ function folderAndFiles($dir)
               
                     <p>$fileOrFolder</p>
                 </div>
+                <input id='renameFile' path='$fileOrFolder'></input>
                 <button path='$fileOrFolder' onclick=deleteFile(event)>Delete</button>
             ";
         }
